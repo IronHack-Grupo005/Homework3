@@ -4,7 +4,7 @@ import com.ironhack.Homework3.enums.*;
 import javax.persistence.*;
 
 @Entity
-public class Opportunity {
+public class Opportunity extends Leads{
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;

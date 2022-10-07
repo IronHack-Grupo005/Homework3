@@ -28,6 +28,14 @@ public class Leads {
     public Leads() {
     }
 
+    public Leads(String name, String phoneNumber, String email, String companyName) {
+        this.id = id;
+        this.name = name;
+        this.phoneNumber = phoneNumber;
+        this.email = email;
+        this.companyName = companyName;
+    }
+
     public Leads(Long id, String name, String phoneNumber, String email, String companyName) {
         this.id = id;
         this.name = name;
