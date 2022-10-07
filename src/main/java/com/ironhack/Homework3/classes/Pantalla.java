@@ -63,9 +63,10 @@ public class Pantalla {
 
         System.out.println("\n");
         System.out.println("#################");
-        for(Opportunity o : oppr){
-            System.out.println(o.getId() + ". " +  o.getName());
+        for(Opportunity o : oppr) {
+            System.out.println(o.getId() + ". " + o.getName());
         }
+
         System.out.println("Escoje uno:");
 
         String tecla = key.nextLine();
@@ -85,6 +86,7 @@ public class Pantalla {
         System.out.println(lead.getId() + ". " +  lead.getName());
 
     }
+
     public static void menuMuestra_Cancelar(Opportunity oppr){
         Scanner key = new Scanner(System.in);
 
