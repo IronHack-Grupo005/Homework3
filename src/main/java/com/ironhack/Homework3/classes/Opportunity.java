@@ -18,6 +18,7 @@ public class Opportunity {
     //@OneToOne(mappedBy = "id", fetch = FetchType.EAGER)
 
     @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "decisionMaker_id", referencedColumnName = "id")
     Contact decisionMaker;
     Status status;
 

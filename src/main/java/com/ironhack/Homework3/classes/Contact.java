@@ -17,6 +17,8 @@ public class Contact {
     private String city;
 
 
+    //@OneToOne
+    //private Opportunity decisionMaker_id;
     //List<Contact> contactos = new ArrayList<>();
     //List<Opportunity> oportunidades = new ArrayList<>();
 
