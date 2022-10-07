@@ -1,7 +1,6 @@
 package com.ironhack.Homework3.classes;
 
 import javax.persistence.*;
-import java.util.ArrayList;
 import java.util.List;
 
 @Entity
@@ -10,9 +9,9 @@ public class CRM {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @OneToMany(mappedBy = "lead")
-    List<Lead> leads;
-    @OneToMany
+    @OneToMany(mappedBy = "crm")
+    List<Leads> leads;
+    @OneToMany(mappedBy = "crm")
     List<Opportunity> oppors;
 
     private static int countLeads = 0;
@@ -20,7 +19,7 @@ public class CRM {
     public CRM() {
     }
 
-    public CRM(Long id, List<Lead> leads, List<Opportunity> oppors) {
+    public CRM(Long id, List<Leads> leads, List<Opportunity> oppors) {
         this.id = id;
         this.leads = leads;
         this.oppors = oppors;
@@ -34,11 +33,11 @@ public class CRM {
         this.id = id;
     }
 
-    public List<Lead> getLeads() {
+    public List<Leads> getLeads() {
         return leads;
     }
 
-    public void setLeads(List<Lead> leads) {
+    public void setLeads(List<Leads> leads) {
         this.leads = leads;
     }
 

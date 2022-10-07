@@ -1,20 +1,17 @@
 package com.ironhack.Homework3;
 
-import com.ironhack.Homework3.classes.Lead;
+import com.ironhack.Homework3.classes.Leads;
 import com.ironhack.Homework3.repositories.LeadRepository;
 import org.junit.jupiter.api.AfterEach;
-import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
-import java.util.Optional;
-
 @SpringBootTest
 class TestMiguel {
 
-    Lead lead;
+    Leads lead;
 
     @Autowired
     LeadRepository leadRepository;

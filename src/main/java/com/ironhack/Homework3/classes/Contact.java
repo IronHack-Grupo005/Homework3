@@ -15,6 +15,11 @@ public class Contact {
 
     private int employeeCount;
     private String city;
-    private String country;
+
+
+    //List<Contact> contactos = new ArrayList<>();
+    //List<Opportunity> oportunidades = new ArrayList<>();
+
+
 
 }

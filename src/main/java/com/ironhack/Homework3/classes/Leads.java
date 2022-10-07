@@ -3,32 +3,32 @@ package com.ironhack.Homework3.classes;
 import javax.persistence.*;
 
 @Entity
-public class Lead {
+public class Leads {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     @ManyToOne
-    @JoinColumn(name = "lead_id")
-    private Lead lead;
+    @JoinColumn(name = "crm_id")
+    private CRM crm;
 
     private String name;
     private String phoneNumber;
     private String email;
     private String companyName;
 
-    public Lead getLead() {
-        return lead;
+    public CRM getCrm() {
+        return crm;
     }
 
-    public void setLead(Lead lead) {
-        this.lead = lead;
+    public void setCrm(CRM crm) {
+        this.crm = crm;
     }
 
-    public Lead() {
+    public Leads() {
     }
 
-    public Lead(Long id, String name, String phoneNumber, String email, String companyName) {
+    public Leads(Long id, String name, String phoneNumber, String email, String companyName) {
         this.id = id;
         this.name = name;
         this.phoneNumber = phoneNumber;

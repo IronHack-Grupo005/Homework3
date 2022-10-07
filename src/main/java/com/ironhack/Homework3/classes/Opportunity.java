@@ -9,6 +9,10 @@ public class Opportunity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @ManyToOne
+    @JoinColumn(name = "crm_id")
+    private CRM crm;
+
     Product industry;
     private int number;
     //@OneToOne(mappedBy = "id", fetch = FetchType.EAGER)
@@ -20,7 +24,7 @@ public class Opportunity {
     public Opportunity() {
     }
 
-    public Opportunity(Long id, Product industry, int number, Contact decisionMaker, Status status) {
+    public Opportunity(Long id, Opportunity oppor, Product industry, int number, Contact decisionMaker, Status status) {
         this.id = id;
         this.industry = industry;
         this.number = number;
@@ -28,6 +32,13 @@ public class Opportunity {
         this.status = status;
     }
 
+    public CRM getCrm() {
+        return crm;
+    }
+
+    public void setCrm(CRM crm) {
+        this.crm = crm;
+    }
     public Long getId() {
         return id;
     }
