@@ -1,11 +1,15 @@
 package com.ironhack.Homework3.classes;
 
 import com.ironhack.Homework3.repositories.LeadRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 
 import java.util.List;
 import java.util.Scanner;
 
 public class Pantalla {
+
+    @Autowired
+    static LeadRepository leadRepository;
 
     public static int menuPrincipal (CRM crm) throws NumberFormatException{
 
@@ -42,6 +46,31 @@ public class Pantalla {
         }
 
         return 0;
+    }
+
+    public static Leads menuNewLead(){
+
+        Scanner key = new Scanner(System.in);
+
+
+        System.out.println("\n\n\n");
+        System.out.println("############");
+        System.out.println("# NEW LEAD #");
+        System.out.println("############");
+        System.out.println("Escribe Nombre:");
+        String name = key.nextLine();
+        System.out.println("Escribe Telefono:");
+        String phoneNumber = key.nextLine();
+        System.out.println("Escribe email:");
+        String email = key.nextLine();
+        System.out.println("Escribe Empresa:");
+        String companyName = key.nextLine();
+
+        Pantalla.menuLeadCreado(leadRepository.save(new Leads(name, phoneNumber, email, companyName)));
+
+        Leads lead = new Leads(name, phoneNumber, email, companyName);
+
+        return lead;
     }
 
     public static String menuPideA_Convertir(List<Leads> leads){
@@ -99,33 +128,7 @@ public class Pantalla {
         System.out.println(oppr.getId() + ". " +  oppr.getName());
 
     }
-    public static Leads menuNewLead(){
 
-        Scanner key = new Scanner(System.in);
-        LeadRepository leadRepository;
-
-        System.out.println("\n\n\n");
-        System.out.println("############");
-        System.out.println("# NEW LEAD #");
-        System.out.println("############");
-        System.out.println("Escribe Nombre:");
-        String name = key.nextLine();
-        System.out.println("Escribe Telefono:");
-        String phoneNumber = key.nextLine();
-        System.out.println("Escribe email:");
-        String email = key.nextLine();
-        System.out.println("Escribe Empresa:");
-        String companyName = key.nextLine();
-
-        Leads lead = new Leads(name, phoneNumber, email, companyName);
-
-        // TODO: Esto no va
-        //leadRepository.save();
-
-        Pantalla.menuLeadCreado(lead);
-
-        return lead;
-    }
     public static int menuListaLeads(List<Leads> leads){
         System.out.println("\n");
         System.out.println("#################");

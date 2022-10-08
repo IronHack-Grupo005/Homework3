@@ -7,7 +7,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
 public class Homework3Application
-		//implements CommandLineRunner
+		implements CommandLineRunner
 {
 
 	public static void main(String[] args) {
@@ -17,7 +17,7 @@ public class Homework3Application
 
 	CRM crm = new CRM();
 
-/*
+
 	@Override
 	public void run(String... args) throws Exception {
 
@@ -25,5 +25,5 @@ public class Homework3Application
 		crm.run();
 	}
 
- */
+
 }
