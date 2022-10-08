@@ -18,15 +18,6 @@ public class Homework3Application implements CommandLineRunner {
 
 	@Override
 	public void run(String... args) throws Exception {
-		System.out.println("\n\n");
-		System.out.println("#################");
-		System.out.println("Escoje opción:");
-		System.out.println("1. Crear Lead:");
-		System.out.println("2. Mostrar Leads");
-		System.out.println("3. Convertir Lead");
-		System.out.println("4. Cancelar Oportunidad:");
-		System.out.println("5. Salir:");
-		System.out.println("O escribe un comando:");
 
 		CRM crm = new CRM();
 		crm.run();
