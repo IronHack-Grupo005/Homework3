@@ -26,8 +26,8 @@ public class Contact {
 
     //@OneToOne
     //private Opportunity decisionMaker_id;
-    //List<Contact> contactos = new ArrayList<>();
-    //List<Opportunity> oportunidades = new ArrayList<>();
+    //List<Contact> contactos;
+    //List<Opportunity> oportunidades;
 
 
 

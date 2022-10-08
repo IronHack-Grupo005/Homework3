@@ -19,12 +19,10 @@ public class Opportunity extends Leads{
     private Long id;
 
     @ManyToOne
-    //@JoinColumn(name = "crm_id_oppor")
     private CRM crmOppor;
 
     Product industry;
     private int number;
-    //@OneToOne(mappedBy = "id", fetch = FetchType.EAGER)
 
     @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "decisionMaker_id", referencedColumnName = "id")

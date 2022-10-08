@@ -1,5 +1,6 @@
 package com.ironhack.Homework3.classes;
 
+import com.ironhack.Homework3.repositories.LeadRepository;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -28,6 +29,8 @@ public class CRM {
 
     public boolean run() {
 
+        LeadRepository leadRepository;
+
         int accion = 0;
         while (accion != 5) {
 
@@ -35,11 +38,12 @@ public class CRM {
             if (accion != 21 || accion != 22 || accion != 23 || accion != 41) {
                 accion = Pantalla.menuPrincipal(this);
             }
-            //System.out.println("Accion: " + accion);
 
             switch (accion) {
                 case 1:
+                    // TODO: Como se guarda ?
                     leads.add(Pantalla.menuNewLead());
+
                     this.countLeads += 1;
                     accion = 0;
                     break;

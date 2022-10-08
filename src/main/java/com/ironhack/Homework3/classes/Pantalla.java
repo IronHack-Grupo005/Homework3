@@ -1,5 +1,7 @@
 package com.ironhack.Homework3.classes;
 
+import com.ironhack.Homework3.repositories.LeadRepository;
+
 import java.util.List;
 import java.util.Scanner;
 
@@ -100,6 +102,7 @@ public class Pantalla {
     public static Leads menuNewLead(){
 
         Scanner key = new Scanner(System.in);
+        LeadRepository leadRepository;
 
         System.out.println("\n\n\n");
         System.out.println("############");
@@ -114,7 +117,8 @@ public class Pantalla {
         System.out.println("Escribe Empresa:");
         String companyName = key.nextLine();
 
-        Leads lead = new Leads(name, phoneNumber, email, companyName);
+
+        leadRepository.save(new Leads(name, phoneNumber, email, companyName));
 
         Pantalla.menuLeadCreado(lead);
 
