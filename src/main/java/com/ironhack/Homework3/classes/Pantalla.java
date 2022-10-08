@@ -3,6 +3,7 @@ package com.ironhack.Homework3.classes;
 import com.ironhack.Homework3.repositories.LeadRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 
+import javax.persistence.Entity;
 import java.util.List;
 import java.util.Scanner;
 
@@ -53,7 +54,7 @@ public class Pantalla {
         Scanner key = new Scanner(System.in);
 
 
-        System.out.println("\n\n\n");
+        System.out.println("\n\n");
         System.out.println("############");
         System.out.println("# NEW LEAD #");
         System.out.println("############");
@@ -67,7 +68,6 @@ public class Pantalla {
         String companyName = key.nextLine();
 
         Leads lead = new Leads(name, phoneNumber, email, companyName);
-
         // TODO: Peta!
         leadRepository.save(lead);
 

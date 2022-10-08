@@ -26,6 +26,12 @@ public class Leads {
     private String email;
     private String companyName;
 
+    @Override
+    protected Object clone() {
+        return this;
+        //return super.clone();
+    }
+
     public CRM getCrmLead() {
         return crmLead;
     }
