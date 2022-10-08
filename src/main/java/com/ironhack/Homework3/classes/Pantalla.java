@@ -117,8 +117,10 @@ public class Pantalla {
         System.out.println("Escribe Empresa:");
         String companyName = key.nextLine();
 
+        Leads lead = new Leads(name, phoneNumber, email, companyName);
 
-        leadRepository.save(new Leads(name, phoneNumber, email, companyName));
+        // TODO: Esto no va
+        //leadRepository.save();
 
         Pantalla.menuLeadCreado(lead);
 

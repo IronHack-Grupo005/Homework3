@@ -3,6 +3,7 @@ package com.ironhack.Homework3;
 import com.ironhack.Homework3.classes.Leads;
 import com.ironhack.Homework3.repositories.LeadRepository;
 import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,7 +19,7 @@ class TestMiguel {
 
     @BeforeEach
     void set_up(){
-        //lead = new Lead();
+        lead = new Leads();
     }
 
     @AfterEach
@@ -29,13 +30,15 @@ class TestMiguel {
 
     @Test
     void if_preset() {
-        //Lead lead = leadRepository.save(new Lead(1l, "Miguel", "677", "@email", "fds"));
+        Leads lead1 = leadRepository.save(new Leads( "Pepe", "677", "@email", "fds"));
+        Leads lead = leadRepository.save(new Leads( "Miguel", "677", "@email", "fds"));
+        Assertions.assertEquals("Miguel",lead.getName() );
     }
 
-    //@Test
-    //void check_if_exist(){
-        //Assertions.assertEquals("Miguel",lead.getName() );
-    //}
+    @Test
+    void check_if_exist(){
+
+    }
 
     /*
     @Test
