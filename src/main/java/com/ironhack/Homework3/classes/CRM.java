@@ -1,17 +1,27 @@
 package com.ironhack.Homework3.classes;
 
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
 import javax.persistence.*;
 import java.util.List;
 
 @Entity
+@AllArgsConstructor
+@NoArgsConstructor
+@Getter
+@Setter
 public class CRM {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @OneToMany(mappedBy = "crm")
+    @OneToMany(mappedBy = "crmLead")
     List<Leads> leads;
-    @OneToMany(mappedBy = "crm")
+
+    @OneToMany(mappedBy = "crmOppor")
     List<Opportunity> oppors;
 
     private static int countLeads = 0;
@@ -80,44 +90,5 @@ public class CRM {
         Pantalla.menuAdios();
         return true;
     }
-    public CRM() {
-    }
 
-    public CRM(Long id, List<Leads> leads, List<Opportunity> oppors) {
-        this.id = id;
-        this.leads = leads;
-        this.oppors = oppors;
-    }
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public List<Leads> getLeads() {
-        return leads;
-    }
-
-    public void setLeads(List<Leads> leads) {
-        this.leads = leads;
-    }
-
-    public List<Opportunity> getOppors() {
-        return oppors;
-    }
-
-    public void setOppors(List<Opportunity> oppors) {
-        this.oppors = oppors;
-    }
-
-    public static int getCountLeads() {
-        return countLeads;
-    }
-
-    public static void setCountLeads(int countLeads) {
-        CRM.countLeads = countLeads;
-    }
 }
