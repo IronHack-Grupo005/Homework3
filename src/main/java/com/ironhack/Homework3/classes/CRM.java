@@ -55,12 +55,13 @@ public class CRM {
                     accion = Pantalla.menuListaLeads(this.leads);
                     break;
                 case 22:
-                    String tecla22 = Pantalla.menuPideA_Convertir(this.leads);
-                    //Pantalla.menuMuestraLead(this.getLead(returnLast(tecla22) - 1));
+
+                    String tecla22 = Pantalla.menuPideA_Convertir();
+
                     accion = 0;
                     break;
                 case 23:
-                    String tecla23 = Pantalla.menuPideA_Convertir(this.leads);
+                    String tecla23 = Pantalla.menuPideA_Convertir();
 
                     Leads lead = Pantalla.menuMuestraLeadAconvertir(this.getLead(returnLast(tecla23) - 1));
                     Pantalla.menuMuestra_Convertir(lead);

@@ -5,6 +5,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 
 import javax.persistence.Entity;
 import java.util.List;
+import java.util.Optional;
 import java.util.Scanner;
 
 public class Pantalla {
@@ -79,19 +80,27 @@ public class Pantalla {
         return lead;
     }
 
-    public static String menuPideA_Convertir(List<Leads> leads){
+    public static String menuPideA_Convertir(){
         Scanner key = new Scanner(System.in);
+        String tecla = "";
+
+        List<Leads> leadsDB = leadRepository.findAll();
 
         System.out.println("\n");
         System.out.println("#################");
-        for(Leads l : leads){
-            System.out.println(l.getName());
+        if (leadsDB.size() > 0) {
+            for (Leads l : leadsDB) {
+                System.out.println(l.getName());
+            }
+            System.out.println("Escoje uno:");
+
+            tecla = key.nextLine();
+
+            System.out.println("Has escrito: " + tecla);
+        } else {
+            System.out.println("No hay Leads a mostrar.");
         }
-        System.out.println("Escoje uno:");
 
-        String tecla = key.nextLine();
-
-        System.out.println("Has escrito: " + tecla);
 
         return tecla;
     }
@@ -140,8 +149,14 @@ public class Pantalla {
         System.out.println("#################");
         System.out.println("# Listado Leads #");
         System.out.println("#################");
-        for(Leads l : leads){
-            System.out.println(l.getId() + ". " +  l.getName());
+
+
+        if(leads != null) {
+            for (Leads l : leads) {
+                System.out.println(l.getId() + ". " + l.getName());
+            }
+        } else {
+            System.out.println("No hay que mostrar");
         }
         return 0;
     }
