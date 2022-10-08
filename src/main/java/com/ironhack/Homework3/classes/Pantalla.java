@@ -66,9 +66,15 @@ public class Pantalla {
         System.out.println("Escribe Empresa:");
         String companyName = key.nextLine();
 
-        Pantalla.menuLeadCreado(leadRepository.save(new Leads(name, phoneNumber, email, companyName)));
-
         Leads lead = new Leads(name, phoneNumber, email, companyName);
+
+        // TODO: Peta!
+        leadRepository.save(lead);
+
+        Pantalla.menuLeadCreado(lead);
+        //Pantalla.menuLeadCreado(leadRepository.save(new Leads(name, phoneNumber, email, companyName)));
+
+
 
         return lead;
     }

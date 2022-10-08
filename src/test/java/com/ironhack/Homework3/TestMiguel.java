@@ -9,6 +9,8 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
+import java.util.Optional;
+
 @SpringBootTest
 class TestMiguel {
 
@@ -30,14 +32,15 @@ class TestMiguel {
 
     @Test
     void if_preset() {
-        Leads lead1 = leadRepository.save(new Leads( "Pepe", "677", "@email", "fds"));
         Leads lead = leadRepository.save(new Leads( "Miguel", "677", "@email", "fds"));
         Assertions.assertEquals("Miguel",lead.getName() );
     }
 
     @Test
-    void check_if_exist(){
-
+    void check_find_by(){
+        Leads lead = leadRepository.save(new Leads( "Pepe", "252", "@email", "Amazon"));
+        Optional<Leads> leadsOptional = leadRepository.findByName("Miguel");
+        Assertions.assertTrue(leadsOptional.isPresent());
     }
 
     /*
