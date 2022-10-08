@@ -22,4 +22,9 @@ public class SalesRep {
 
     @OneToOne
     private Company company;
+
+    public SalesRep(String name, Company company) {
+        this.name = name;
+        this.company = company;
+    }
 }

@@ -19,7 +19,7 @@ public class Company {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id_company;
+    private int id;
 
     private int numberEmployees;
 
