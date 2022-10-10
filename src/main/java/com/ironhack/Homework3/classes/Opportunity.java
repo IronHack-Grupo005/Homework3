@@ -21,6 +21,8 @@ public class Opportunity extends Leads{
     @ManyToOne
     private CRM crmOppor;
 
+
+
     Product industry;
     private int number;
 

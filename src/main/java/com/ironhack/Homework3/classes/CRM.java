@@ -8,6 +8,7 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import javax.persistence.*;
+import java.util.ArrayList;
 import java.util.List;
 
 @Entity
@@ -21,7 +22,7 @@ public class CRM {
     private Long id;
 
     @OneToMany(mappedBy = "crmLead")
-    List<Leads> leads;
+    List<Leads> leads = new ArrayList<>();
 
     @OneToMany(mappedBy = "crmOppor")
     List<Opportunity> oppors;
@@ -68,7 +69,7 @@ public class CRM {
                     Opportunity oppor = (Opportunity) lead.clone();
                     oppor.setStatus(Status.OPEN);
 
-                    //TODO: Esto es asi ?
+                    // TODO: Esto es asi ?
                     this.oppors.add(oppor);
 
                     accion = 0;
